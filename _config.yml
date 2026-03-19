@@ -1,0 +1,137 @@
+# The Site Configuration
+
+# Import the theme
+theme: jekyll-theme-chirpy
+
+lang: en
+
+timezone: America/Los_Angeles
+
+# jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
+
+title: Nathan Northcutt
+
+tagline: "Software engineer, writer, tinkerer"
+
+description: >-
+  Personal blog of Nathan Northcutt — thoughts on software engineering,
+  technology, and the craft of building things
+
+url: "https://blog.nathannorthcutt.com"
+
+github:
+  username: nathannorthcutt
+
+twitter:
+  username: na_northcutt
+
+social:
+  name: Nathan Northcutt
+  email: nathan.northcutt@gmail.com
+  links:
+    - https://github.com/nathannorthcutt
+    - https://twitter.com/na_northcutt
+    - https://www.linkedin.com/in/nathan-northcutt-22a32623
+    - https://telefrek.medium.com
+    - https://www.youtube.com/@nathannorthcutt5977
+
+# Site Verification Settings
+webmaster_verifications:
+  google:
+  bing:
+
+# Web Analytics Settings
+analytics:
+  google:
+    id:
+
+# Force dark mode
+theme_mode: dark
+
+# the avatar on sidebar, support local or CORS resources
+avatar: /assets/img/avatar.png
+
+# boolean type, the global switch for TOC in posts.
+toc: true
+
+comments:
+  provider:
+
+pwa:
+  enabled: true
+  cache:
+    enabled: true
+
+paginate: 10
+
+baseurl: ""
+
+# ------------ The following options are not recommended to be modified ------------------
+
+kramdown:
+  footnote_backlink: "&#8617;&#xfe0e;"
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
+collections:
+  tabs:
+    output: true
+    sort_by: order
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      comments: true
+      toc: true
+      permalink: /posts/:title/
+  - scope:
+      path: _drafts
+    values:
+      comments: false
+  - scope:
+      path: ""
+      type: tabs
+    values:
+      layout: page
+      permalink: /:title/
+
+sass:
+  style: compressed
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  profile: false
+  blanklines: false
+  ignore:
+    envs: [development]
+
+exclude:
+  - "*.gem"
+  - "*.gemspec"
+  - docs
+  - tools
+  - README.md
+  - LICENSE
+  - purgecss.js
+  - "*.config.js"
+  - "package*.json"
+
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/

@@ -1,0 +1,85 @@
+---
+---
+
+/* prettier-ignore */
+@use 'main
+{%- if jekyll.environment == "production" -%}
+  .bundle
+{%- endif -%}
+';
+
+/* "Tron Red" branding overrides
+ * Primary bg:       #0a0a0a (near black)
+ * Card bg:          #111111 / #1a1a1a (dark grays)
+ * Accent red:       #FF1744 (neon crimson)
+ * Hover red:        #FF5252 (softer red)
+ * Text:             #E0E0E0 (light gray)
+ * Muted text:       #9E9E9E
+ * Code bg:          #1a1a1a
+ * Borders:          #2a2a2a
+ */
+
+:root[data-mode='dark'],
+:root {
+  /* Backgrounds */
+  --sidebar-bg: #0a0a0a;
+  --main-bg: #0f0f0f;
+  --card-bg: #111111;
+
+  /* Accent colors — neon crimson */
+  --link-color: #FF1744;
+  --link-underline-color: rgba(255, 23, 68, 0.3);
+  --btn-primary-bg: #FF1744;
+  --btn-primary-hover-bg: #FF5252;
+
+  /* Text colors */
+  --text-color: #E0E0E0;
+  --text-muted-color: #9E9E9E;
+  --heading-color: #F0F0F0;
+
+  /* Custom properties for reuse */
+  --accent-red: #FF1744;
+  --accent-red-soft: #FF5252;
+  --accent-red-glow: rgba(255, 23, 68, 0.15);
+  --border-subtle: #2a2a2a;
+}
+
+/* Subtle red underline on content headings */
+#main-wrapper .content h1,
+#main-wrapper .content h2 {
+  border-bottom: 2px solid var(--accent-red);
+  padding-bottom: 0.3rem;
+}
+
+/* Active nav item highlighted in accent red */
+.nav-item.active .nav-link {
+  color: var(--accent-red) !important;
+}
+
+/* Tag and category badges in accent color */
+.tag, .categories .card-body a {
+  color: var(--accent-red-soft);
+}
+
+/* Fix sidebar nav — remove inherited list bullets */
+#sidebar ul.nav,
+#sidebar ul.nav li,
+#sidebar .nav,
+#sidebar .nav .nav-item {
+  list-style: none !important;
+  list-style-type: none !important;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+/* Code block background */
+div.highlight,
+.highlight,
+.code-header + .highlight {
+  background-color: #1a1a1a !important;
+}
+
+/* Subtle border treatment */
+.card, .post-preview {
+  border-color: var(--border-subtle);
+}
